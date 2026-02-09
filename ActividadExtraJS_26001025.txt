@@ -1,0 +1,49 @@
+alert("¡Hola!. Bienvenido al juego de adivinar números");
+alert("El sistema generará un número al azar");
+alert("Debes ingresar un número dentro del rango indicado (3 a 6)");
+alert("Luego adivinar si tu número es mayor, menor o igual al de la computadora");
+alert("¡Comencemos!");
+
+while (true) {
+  let numeroRandom = Math.floor(Math.random() * (9)) + 1;
+
+  let numeroUsuario = Number(prompt("Ingresa un número entre 3 y 6"));
+
+  while (numeroUsuario < 3 || numeroUsuario > 6) {
+    alert("¡Ese no es un número válido!");
+    numeroUsuario = Number(prompt("Ingresa un número del 3 y 6"));
+  }
+
+  alert("El número seleccionado es: " + numeroUsuario);
+
+  let numeroSeleccionado = (prompt("¿Creés que el número es mayor, menor o igual al seleccionado por el computador?"))
+
+  if (numeroUsuario > numeroRandom) {
+    if (numeroSeleccionado === "mayor") {
+       alert("¡Acertaste! Tu número (" + numeroUsuario + ") es mayor al de la computadora: (" + numeroRandom + ")");
+       alert("¡Bien hecho!");
+    } else {
+        alert("¡Fallaste! Tu número es mayor al de la computadora: (" + numeroRandom + ")");
+    }
+  }
+  else if (numeroUsuario < numeroRandom) {
+    if (numeroSeleccionado === "menor") {
+      alert("¡Acertaste! Tu número (" + numeroUsuario + ") es menor al de la computadora: (" + numeroRandom + ")");
+      alert("¡Bien hecho!");
+    } else {
+      alert("¡Fallaste! Tu número es menor al de la computadora: (" + numeroRandom + ")");
+    }
+  }
+  else {
+    if (numeroSeleccionado === "igual") {
+      alert("¡Increíble! Los números son iguales " + numeroRandom);
+    } else {
+      alert("¡Fallaste! Los números son iguales " + numeroRandom);
+    }
+  }
+  let seleccion = (prompt("¿Quieres jugar otra vez?"))
+  if (seleccion === "no") {
+    alert("¡Gracias por jugar!");
+    break
+  }
+}

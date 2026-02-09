@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Change Content - Javascript</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <div id="myelement">Old Text</div>
+
+  <script>
+    // Días por mes
+const diasPorMes = {
+  1: 31, 2: 29, 3: 31, 4: 30,
+  5: 31, 6: 30, 7: 31, 8: 31,
+  9: 30, 10: 31, 11: 30, 12: 31
+};
+
+// Mes escrito
+const mesEscrito = {
+  1: "Enero", 2: "Febrero", 3: "Marzo", 4: "Abril",
+  5: "Mayo", 6: "Junio", 7: "Julio", 8: "Agosto",
+  9: "Septiembre", 10: "Octubre", 11: "Noviembre", 12: "Diciembre"
+};
+
+let mes;
+let dia;
+let signo;
+
+// Validar mes
+while (true) {
+  mes = parseInt(prompt("Ingresa el mes de nacimiento (1-12):"));
+  if (mes >= 1 && mes <= 12) {
+    break;
+  }
+  alert("Mes inválido. Ingresa un número válido.");
+}
+
+// Validar día según el mes
+while (true) {
+  dia = parseInt(prompt("Ingresa el día de nacimiento:"));
+  if (dia >= 1 && dia <= diasPorMes[mes]) {
+    break;
+  }
+  alert("Día inválido para ese mes. Ingresa un número válido.");
+}
+
+// Calcular signo zodiacal
+if ((mes === 1 && dia >= 21) || (mes === 2 && dia <= 19)) {
+  signo = "Acuario";
+} else if ((mes === 2 && dia >= 20) || (mes === 3 && dia <= 20)) {
+  signo = "Piscis";
+} else if ((mes === 3 && dia >= 21) || (mes === 4 && dia <= 20)) {
+  signo = "Aries";
+} else if ((mes === 4 && dia >= 21) || (mes === 5 && dia <= 20)) {
+  signo = "Tauro";
+} else if ((mes === 5 && dia >= 21) || (mes === 6 && dia <= 20)) {
+  signo = "Géminis";
+} else if ((mes === 6 && dia >= 21) || (mes === 7 && dia <= 22)) {
+  signo = "Cáncer";
+} else if ((mes === 7 && dia >= 23) || (mes === 8 && dia <= 23)) {
+  signo = "Leo";
+} else if ((mes === 8 && dia >= 24) || (mes === 9 && dia <= 22)) {
+  signo = "Virgo";
+} else if ((mes === 9 && dia >= 23) || (mes === 10 && dia <= 23)) {
+  signo = "Libra";
+} else if ((mes === 10 && dia >= 24) || (mes === 11 && dia <= 22)) {
+  signo = "Escorpio";
+} else if ((mes === 11 && dia >= 23) || (mes === 12 && dia <= 21)) {
+  signo = "Sagitario";
+} else if ((mes === 12 && dia >= 22) || (mes === 1 && dia <= 20)) {
+  signo = "Capricornio";
+}
+
+// Nombre
+let nombre = prompt("Ingresa tu nombre:");
+
+// Resultado final
+alert(`El cumpleaños de ${nombre} es el ${dia} de ${mesEscrito[mes]} y su signo zodiacal es ${signo}`);
+
+  </script>
+</body>
+</html>
